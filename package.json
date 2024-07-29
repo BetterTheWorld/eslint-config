@@ -1,0 +1,57 @@
+{
+  "name": "@flipgive/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared flipgive eslint config",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare": "lefthook install",
+    "release": "release-it"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-universe": "^13.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-promise": "^7.0.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-storybook": "^0.8.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@evilmartians/lefthook": "^1.7.11",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "husky": "^9.1.4",
+    "release-it": "^17.6.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true,
+      "access": "public"
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  }
+}
