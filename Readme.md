@@ -2,6 +2,10 @@
 
 A custom ESLint configuration for both web (Next.js) and React Native projects.
 
+![npm](https://img.shields.io/npm/v/@flipgive/eslint-config)
+![license](https://img.shields.io/npm/l/@flipgive/eslint-config)
+![downloads](https://img.shields.io/npm/dm/@flipgive/eslint-config)
+
 ## Installation
 
 Install the package via npm:
