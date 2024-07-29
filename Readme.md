@@ -18,32 +18,15 @@ npm install @flipgive/eslint-config
 
 Create or update your `.eslintrc.js` file in your project to use the custom ESLint package:
 
-### For Web (Next.js) Projects
-
 ```javascript
 const { generateConfig } = require("@flipgive/eslint-config");
-const schemaPath = "./path/to/your/schema.graphql";
 
-const config = generateConfig(schemaPath);
+// Set the path to your schema.graphql file if needed
+const schemaPath = ""; // Set to '' or null if not using schema
 
-module.exports = {
-  ...config,
-  extends: config.configs.web.extends,
-};
-```
+const { reactNativeConfig } = generateConfig(schemaPath);
 
-### For React Native Projects
-
-```javascript
-const { generateConfig } = require("@flipgive/eslint-config");
-const schemaPath = "./path/to/your/schema.graphql";
-
-const config = generateConfig(schemaPath);
-
-module.exports = {
-  ...config,
-  extends: config.configs["react-native"].extends,
-};
+module.exports = reactNativeConfig;
 ```
 
 Replace `./path/to/your/schema.graphql` with the actual path to your `schema.graphql` file.
