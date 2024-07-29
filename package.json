@@ -12,7 +12,14 @@
     "release": "release-it"
   },
   "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BetterTheWorld/flipgive-eslint-config.git"
+  },
+  "author": "FlipGive <ddiaz@flipgive.com> (https://github.com/BetterTheWorld)",
+  "bugs": {
+    "url": "https://github.com/BetterTheWorld/flipgive-eslint-config/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "@react-native-community/eslint-config": "^3.2.0",
