@@ -38,10 +38,6 @@ module.exports = {
       typescript: {
         project: __dirname + "/tsconfig.json",
       },
-      alias: {
-        map: [["@", "./"]],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-      },
     },
   },
 };
