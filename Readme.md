@@ -19,17 +19,43 @@ npm install @flipgive/eslint-config
 Create or update your `.eslintrc.js` file in your project to use the custom ESLint package:
 
 ```javascript
-const { generateConfig } = require("@flipgive/eslint-config");
+const { generateConfig } = require("../../lib");
 
-// Set the path to your schema.graphql file if needed
-const schemaPath = ""; // Set to '' or null if not using schema
+const schemaPath = "";
 
 const { reactNativeConfig } = generateConfig(schemaPath);
 
-module.exports = reactNativeConfig;
+module.exports = {
+  ...reactNativeConfig,
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: "module",
+    project: "./tsconfig.json",
+  },
+};
 ```
 
 Replace `./path/to/your/schema.graphql` with the actual path to your `schema.graphql` file.
+
+## Handling Module Path Resolution Errors
+
+If you encounter an error like:
+
+`error Unable to resolve path to module '@/my-path' import/no-unresolved`
+
+You can resolve this by configuring ESLint to understand your module aliases. Follow these steps:
+
+### Step 1: Install the Necessary Package
+
+First, you need to install the `eslint-import-resolver-alias` package:
+
+```bash
+npm install --save-dev eslint-import-resolver-alias
+```
+
+### Step 2: Configure ESLint to Use the Alias Resolver
+
+Update your ESLint configuration to use the eslint-import-resolver-alias resolver. You can do this by adding the following to your ESLint configuration file (e.g., .eslintrc.js).
 
 ## Configuration Details
 
