@@ -1,6 +1,6 @@
 {
   "name": "@flipgive/eslint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Shared flipgive eslint config",
   "main": "lib/index.js",
   "files": [
