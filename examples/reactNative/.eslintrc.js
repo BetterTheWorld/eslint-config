@@ -1,7 +1,5 @@
 const { generateConfig } = require("../../lib");
-
 const schemaPath = "";
-
 const { reactNativeConfig } = generateConfig(schemaPath);
 
 module.exports = {
@@ -15,12 +13,14 @@ module.exports = {
   },
   settings: {
     ...reactNativeConfig.settings,
-    // "import/resolver": {
-    //   typescript: true,
-    //   alias: {
-    //     map: [["@", "."]],
-    //     extensions: [".js", ".jsx", ".ts", ".tsx"],
-    //   },
-    // },
+    "import/resolver": {
+      typescript: {
+        project: __dirname + "/tsconfig.json",
+      },
+      alias: {
+        map: [["@", "./"]],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
 };
